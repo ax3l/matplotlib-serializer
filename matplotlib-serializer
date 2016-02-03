@@ -1,0 +1,53 @@
+import numpy as np
+import h5py as h5
+
+#import tifffile as tf
+from tifffile import imsave
+
+#import sys
+#import os.path
+#from operator import itemgetter, attrgetter
+
+class serializer:
+    def __init__(self) :
+        """
+        """
+        return
+
+    def save(self, f, name) :
+        """
+        f    matplotlib.figure.Figure to serialize
+        name string, ideally same name as image
+        """
+        # f.get_children()
+        # ax.get_children()
+        # TODO save Axes position + size
+        # per Axes:
+        #   TODO save Axis per Axes
+        #   TODO save labels and title
+        #   TODO save range, ticks
+        #   TODO save
+        #   TODO tiff-ify data (`lines.Line2D` (plot),
+        #                       `image.AxesImage` (imshow),
+        #                       `collections.PolyCollection` (stackplot))
+        return
+
+    def load(self, f, name) :
+        """
+        f    matplotlib.figure.Figure to serialize
+        name string, name of the serialization directory
+        """
+        # TODO restore Axes
+        # TODO restore data
+        # TODO plot data
+        # TODO set limits (x,y)
+        # TODO set colorbars
+        # TODO add labels and title
+        # TODO add ticks
+        return
+
+if __name__ == "__main__" :
+    """
+    Example script
+    """
+    mpls = serializer()
