@@ -54,7 +54,8 @@ else:
 
 ### Why?
 
-No time to wait for [MEP25](http://matplotlib.org/devdocs/devel/MEP/MEP25.html).
+No time to wait for [MEP25](http://matplotlib.org/devdocs/devel/MEP/MEP25.html)
+(introducing a good MVC concept would be *amazing* and solve a lot!).
 
 Annoyed of abstracting even more parts of my scientific post-processing scripts
 into a clean layer that explicitly
