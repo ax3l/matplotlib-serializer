@@ -14,6 +14,7 @@ This is a quick hack project to serialize the most important data of a [matplotl
 
 - [ ] maybe implement a `load` routine, too
 
+
 ### How to Use
 
 ```python
@@ -62,3 +63,7 @@ Afraid of using [pickle](https://docs.python.org/3.4/library/pickle.html) becaus
   - mpl changes even more over time rendering the pickle useless
 
 tiff images are quite nice to hack on (e.g., via ImageJ). float32 support should (hopefully) be sufficient for most applications.
+
+Basically this is just a data and meta-data saving mechanism that immitates a "replay"
+of the public (!) matplotlib API calls that created the figure and reads the data from
+a cache instead of needing the source files again.
