@@ -4,7 +4,8 @@ Plot Caching Orthogonal to MEP25 for the Impatient (=me)
 
 ## About
 
-This is a quick hack project to serialize the most important data of a [matplotlib figure](http://matplotlib.org/faq/usage_faq.html#usage) object:
+This is a quick hack project to serialize the most important data of a
+[matplotlib figure](http://matplotlib.org/faq/usage_faq.html#usage) object:
 
 - [ ] loop through all **Axes**
   - [ ] save the **Axes** (position, size)
@@ -55,14 +56,21 @@ else:
 
 No time to wait for [MEP25](http://matplotlib.org/devdocs/devel/MEP/MEP25.html).
 
-Annoyed of abstracting even more parts of my scientific post-processing scripts into a clean layer that explicitly [caches and annotates each data set](https://stackoverflow.com/questions/21479886/how-to-conveniently-modify-matplotlib-plots-in-the-aftermath-persistence-serial) before plotting (I am already doing that *while* plotting).
+Annoyed of abstracting even more parts of my scientific post-processing scripts
+into a clean layer that explicitly
+[caches and annotates each data set](https://stackoverflow.com/questions/21479886/how-to-conveniently-modify-matplotlib-plots-in-the-aftermath-persistence-serial)
+before plotting (I am already doing that *while* plotting).
 
 Afraid of using [pickle](https://docs.python.org/3.4/library/pickle.html) because:
   - it's only useful for python users
   - pickle changes over time
   - mpl changes even more over time rendering the pickle useless
 
-tiff images are quite nice to hack on (e.g., via ImageJ). float32 support should (hopefully) be sufficient for most applications.
+tiff images are quite nice to hack on (e.g., via ImageJ). float32 support
+should (hopefully) be sufficient for most applications.
+
+Most of my images do need fancy stuff but just of `plot` or `imshow` data,
+labels, limits, ticks/ranges, title and color(bar).
 
 Basically this is just a data and meta-data saving mechanism that immitates a "replay"
 of the public (!) matplotlib API calls that created the figure and reads the data from
