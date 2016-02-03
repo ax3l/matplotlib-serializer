@@ -24,12 +24,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib-serializer import serializer
 
+# create empty mpl figure
+f = plt.figure()
+
 # create class
 mpls = serializer()
 
 # restore
 if mpls.load(f, "my_analysis_t0") :
-    # manipulate f or its children (axes, axis, cb's, labels, fonts, etc.)
+    # manipulate f ...
+    # ... or its children (axes, axis, cb's, labels, fonts, etc.)
+    # or just plot it *interactively* and play with the zoom:
     f.show()
 else:
     # dang, I have to crunch data!
@@ -62,17 +67,20 @@ into a clean layer that explicitly
 [caches and annotates each data set](https://stackoverflow.com/questions/21479886/how-to-conveniently-modify-matplotlib-plots-in-the-aftermath-persistence-serial)
 before plotting (I am already doing that *while* plotting).
 
+Annoyed of not being able to zoom into already plotted data. Especially if it
+takes a long time to generate the data that is then plotted in no-time (caching).
+
 Afraid of using [pickle](https://docs.python.org/3.4/library/pickle.html) because:
   - it's only useful for python users
-  - pickle changes over time
-  - mpl changes even more over time rendering the pickle useless
+  - pickle binary blobs changes over time (python2/3)
+  - mpl objects themselves change even more over time rendering the pickle blob useless
 
 tiff images are quite nice to hack on (e.g., via ImageJ). float32 support
 should (hopefully) be sufficient for most applications.
 
-Most of my images do need fancy stuff but just of `plot` or `imshow` data,
+Most of my images do not need fancy stuff but just of `plot` or `imshow` data,
 labels, limits, ticks/ranges, title and color(bar).
 
 Basically this is just a data and meta-data saving mechanism that immitates a "replay"
 of the public (!) matplotlib API calls that created the figure and reads the data from
-a cache instead of needing the source files again.
+a cache instead of needing the source data again.
