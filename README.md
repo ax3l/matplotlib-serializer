@@ -19,8 +19,11 @@ This is a quick hack project to serialize the most important data of a [matplotl
 ```python
 # imports
 import matplotlib.pyplot as plt
-import matplotlib-serializer as mpls
 import numpy as np
+from matplotlib-serializer import serializer
+
+# create class
+mpls = serializer()
 
 # restore
 if mpls.load(f, "my_analysis_t0") :
