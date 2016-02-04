@@ -47,7 +47,13 @@ else:
 
     # figure and axes preparation
     f = plt.figure()
-    ax = f.add_axes([0.1,0.1,0.8,0.8])
+    ax1 = f.add_axes([0.1,0.1,0.4,0.8])
+    ax2 = f.add_axes([0.5,0.1,0.4,0.8])
+
+    # plot
+    ax1.plot(x, y1)
+    ax1.plot(x, y2)
+    ax2.plot(d)
 
     # save
     #   should create a directory alongside the "picture" on is usually drawing
@@ -74,6 +80,10 @@ Afraid of using [pickle](https://docs.python.org/3.4/library/pickle.html) becaus
   - it's only useful for python users
   - pickle binary blobs changes over time (python2/3)
   - mpl objects themselves change even more over time rendering the pickle blob useless
+
+**Update:** oh sweet, `mpld3`'s `save_json()` routine
+[could be half of the solution!!](https://mpld3.github.io/quickstart.html) :)
+We just need to export the `"data"` objects or get them out of the json! :)
 
 tiff images are quite nice to hack on (e.g., via ImageJ). float32 support
 should (hopefully) be sufficient for most applications.
