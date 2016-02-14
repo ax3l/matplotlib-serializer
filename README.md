@@ -84,6 +84,7 @@ Afraid of using [pickle](https://docs.python.org/3.4/library/pickle.html) becaus
 **Update:** oh sweet, `mpld3`'s `save_json()` routine
 [could be half of the solution!!](https://mpld3.github.io/quickstart.html) :)
 We just need to export the `"data"` objects or get them out of the json! :)
+(Update2: also check the underlying [mplexporter](https://github.com/mpld3/mplexporter))
 
 tiff images are quite nice to hack on (e.g., via ImageJ). float32 support
 should (hopefully) be sufficient for most applications.
